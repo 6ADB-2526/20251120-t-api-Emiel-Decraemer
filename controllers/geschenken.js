@@ -12,13 +12,21 @@
 
 // connecteer de datagegevens aan de controller
 const { sinterklaasGeschenken: geschenken } = require("../databank/data");
+const { all } = require("../routes/geschenken");
 
 const lijstGeschenken = (req, res) => {
-  res.json(geschenken);
+  allPresents = []  // lege array voor alle presents maken
+  geschenken.forEach(geschenk => { // alle id's en namen in de array steken
+    allPresents.push(geschenk.id, geschenk.naam)
+  });
+  res.json(allPresents)  // de array sturen naar de client
 };
 
 const geschenkInfo = (req, res) => {
-  res.json({ status: "gelukt" });
+  fetch("http://localhost:3000/geschenken/").then((info) => info.json())
+    .then((geschenken) => {
+    const geschenk = geschenken.find((geschenk) => geschenk.id == id)
+  res.json(geschenk);})
 };
 
 const geschenkToevoegen = (req, res) => {
