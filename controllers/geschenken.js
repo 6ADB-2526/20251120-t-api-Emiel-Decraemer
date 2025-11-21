@@ -23,10 +23,7 @@ const lijstGeschenken = (req, res) => {
 };
 
 const geschenkInfo = (req, res) => {
-  fetch("http://localhost:3000/geschenken/").then((info) => info.json())
-    .then((geschenken) => {
-    const geschenk = geschenken.find((geschenk) => geschenk.id == id)
-  res.json(geschenk);})
+  
 };
 
 const geschenkToevoegen = (req, res) => {
