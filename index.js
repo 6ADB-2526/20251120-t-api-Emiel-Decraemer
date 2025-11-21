@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const geschenkenRoute = require("./routes/geschenken");
+const kinderenroute = require("./routes/kinderen")
 
 const app = express();
 

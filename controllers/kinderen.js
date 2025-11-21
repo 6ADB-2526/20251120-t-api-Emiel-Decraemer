@@ -9,3 +9,12 @@
  *
  * succes!!
  */
+const kinderen = require("../databank/data")
+
+const postAll = (req, res) => {
+    res.json(kinderen)
+}
+
+module.exports = {
+    postAll
+}

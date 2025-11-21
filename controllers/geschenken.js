@@ -18,7 +18,7 @@ const lijstGeschenken = (req, res) => {
   allPresents = []  // lege array voor alle presents maken
   geschenken.forEach(geschenk => { // alle id's en namen in de array steken
     allPresents.push(geschenk.id, geschenk.naam)
-  });
+  }); 
   res.json(allPresents)  // de array sturen naar de client
 };
 
